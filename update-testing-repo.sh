@@ -14,26 +14,26 @@ cd ./repo || { echo "Ошибка: папка repo не существует"; e
 
 # 1. Добавляем пакеты в репозиторий
 echo "Добавляем пакеты в репозиторий..."
-repo-add enrepo.db.tar.gz *.pkg.tar.zst
+repo-add enrepo-testing.db.tar.gz *.pkg.tar.zst
 
 # 2. Заменяем симлинки на копии архивов
 echo "Обновляем файлы репозитория..."
 
 # Удаляем старые файлы и копируем архивы
-if [ -f "enrepo.db.tar.gz" ]; then
-    rm -f enrepo.db
-    cp enrepo.db.tar.gz enrepo.db
-    echo "✓ Обновлен enrepo.db"
+if [ -f "enrepo-testing.db.tar.gz" ]; then
+    rm -f enrepo-testing.db
+    cp enrepo-testing.db.tar.gz enrepo-testing.db
+    echo "✓ Обновлен enrepo-testing.db"
 else
-    echo "⚠ Файл enrepo.db.tar.gz не найден"
+    echo "⚠ Файл enrepo-testing.db.tar.gz не найден"
 fi
 
-if [ -f "enrepo.files.tar.gz" ]; then
-    rm -f enrepo.files
-    cp enrepo.files.tar.gz enrepo.files
-    echo "✓ Обновлен enrepo.files"
+if [ -f "enrepo-testing.files.tar.gz" ]; then
+    rm -f enrepo-testing.files
+    cp enrepo-testing.files.tar.gz enrepo-testing.files
+    echo "✓ Обновлен enrepo-testing.files"
 else
-    echo "⚠ Файл enrepo.files.tar.gz не найден"
+    echo "⚠ Файл enrepo-testing.files.tar.gz не найден"
 fi
 
 # Возвращаемся на уровень выше
